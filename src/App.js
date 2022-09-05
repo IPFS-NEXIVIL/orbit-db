@@ -1,23 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import store from './store';
+import { Store } from 'orbit-db';
 
 function App() {
+  await store.create()
+
+  console.log("odb id:", store.odb.identity.id)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div><p>Peer ID</p></div>
+      
     </div>
   );
 }
